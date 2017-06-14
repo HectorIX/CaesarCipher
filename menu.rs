@@ -5,6 +5,7 @@ use menu;
 use caesar_cipher_ascii;
 
 
+
 // Ask user to insert a value from the keyboard
 // given the menu
 // and depending the user's choice
@@ -52,7 +53,7 @@ pub fn menu() {
                     message = fileIO::read_file(read_filename);
 
                     // Encrypt the message.
-                    encrypted_message = caesar_cipher::encrypt(message);
+                    encrypted_message = caesar_cipher_ascii::encrypt_ascii(message);
                     println!("The encrypted message is: {}", encrypted_message );
 
                     // Store the message to the "output.txt"
@@ -75,10 +76,10 @@ pub fn menu() {
 
                     // Ask for the decryption key.
                     println!("Enter the decryption key (a positive integer):" );
-                    dencryption_key = menu::read_integer() % 26;
+                    dencryption_key = menu::read_integer() % 96;
 
                     // Decrypt the message and print it out.
-                    plaintext_message = caesar_cipher::decrypt(encrypted_message, dencryption_key);
+                    plaintext_message = caesar_cipher_ascii::decrypt_ascii(encrypted_message, dencryption_key);
                     println!("The plaintext message is: {:?}", plaintext_message)
                  },
             4 => {
