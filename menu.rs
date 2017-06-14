@@ -1,8 +1,8 @@
 use std::io::{self, BufRead};
 use fileIO;
 use menu;
-use caesar_cipher;
-
+//use caesar_cipher;
+use caesar_cipher_ascii;
 
 
 // Ask user to insert a value from the keyboard
